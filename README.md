@@ -1,6 +1,6 @@
 # Job Fair Project Report: Predicting Job Offer Probability
 
-1. Introduction
+ Introduction
 The objective of this project is to predict the likelihood of a student receiving a job offer based on their background, academic performance, and skills. This model can assist recruiters in identifying strong candidates efficiently during the job fair.
 The dataset provided contains student-level features including experience, grades, projects, extracurriculars, and a binary job offer outcome. The task required cleaning, modeling, evaluating, and interpreting results.
 
@@ -80,7 +80,7 @@ Key Insight: Even with clean and relevant features, the models could not reliabl
 Despite using well-known machine learning models and best practices like class balancing and cross-validation, the models were unable to uncover strong predictive patterns. The most reasonable explanation is that job offers depend on subjective or missing external factors.
 Nonetheless, the pipeline developed here demonstrates a full machine learning workflow: from cleaning, feature engineering, modeling, tuning, and interpretation.
 To investigate overfitting or underfitting, multiple models were evaluated using cross-validation. As all models performed similarly poorly on both training and validation sets, overfitting was ruled out. Instead, the results suggest possible underfitting or a lack of signal in the dataset due to missing external variables (e.g., interviews, resumes, referrals) that likely influence job offers.
-In the end, a tree-based model was chosen (XGBoost) for its ability to capture feature interactions that linear models like logistic regression cannot learn without manual feature engineering.
+When selecting the final model, I opted for a tree-based method (XGBoost) because it is capable of automatically capturing complex interactions between features (such as combinations of skills) without requiring explicit feature engineering. This is a key advantage over logistic regression, which assumes linear relationships and cannot account for such interactions unless manually designed.
 
 7. Recommendations
 Future datasets should include more behavioral, social, and performance-based variables (e.g., interview scores, resume quality, referrals).
@@ -91,13 +91,31 @@ Consider collecting recruiter evaluations or event attendance history.
 
 
 8. Visuals & Appendix
-Confusion matrices for all models
+Confusion matrices for all models:
+
+Random Forest Confusion Matrix:
+
+Random Forest Confusion Matrix after balancing:
+
+SMOTE Random Forest confusion Matrix:
+
+XGBoost Confusion Matrix:
 
 
-ROC-AUC curves
+Logistic Regression Confusion Matrix:
 
 
 Feature importance bar plots
 
+Random Forest Feature importance bar plots:
+
+
+Random Forest After Balancing Feature importance bar plots:
+
+XGBoost After Feature importance bar plots:
+
 
 Logistic regression coefficient plot
+
+
+
